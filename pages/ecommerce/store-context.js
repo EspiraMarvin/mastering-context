@@ -15,15 +15,15 @@ const useStore = () => {
 
 const StoreContext = createContext(null);
 
-export const StoreContextProvider = ({ children }) => {
+export const StoreContextProvider = ({ children }) => (
     <StoreContext.Provider value={useStore()}>
         { children }
     </StoreContext.Provider>
-}
+)
 
 export const useLogin = () => useContext(StoreContext).login;
-export const useLogout = () => useStore((state) => state.logout);
-export const useUser = () => useStore((state) => state.user);
-export const useAddToCart = () => useStore((state) => state.addToCart);
-export const useCartCount = () => useStore((state) => state.cartCount);
+export const useLogout = () => useContext(StoreContext).logout;
+export const useUser = () => useContext(StoreContext).user;
+export const useAddToCart = () => useContext(StoreContext).addToCart;
+export const useCartCount = () => useContext(StoreContext).cartCount;
 

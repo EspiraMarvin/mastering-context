@@ -3,7 +3,7 @@ import {
     useAddToCart, useCartCount,
     useUser, StoreContextProvider
     } 
-from './store-context'
+from './store-context-selector'
 
 const LoginSection = () => {
     const login = useLogin()
